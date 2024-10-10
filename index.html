@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COES S.R.L. - Specialisti in Edilizia e Movimento Terra</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-container">
+        <div class="navbar-container container">
             <div class="logo-container">
                 <img src="assets/LOGO_COES-removebg-preview.png" alt="COES S.R.L. Logo" class="logo">
             </div>
@@ -17,6 +18,7 @@
                 <li class="nav-item"><a href="#chi-siamo" class="nav-link">Chi Siamo</a></li>
                 <li class="nav-item"><a href="#servizi" class="nav-link">Servizi</a></li>
                 <li class="nav-item"><a href="#certificazioni" class="nav-link">Certificazioni</a></li>
+                <li class="nav-item"><a href="#lavori-eseguiti" class="nav-link">Lavori Eseguiti</a></li>
                 <li class="nav-item"><a href="#contatti" class="nav-link">Contatti</a></li>
             </ul>
             <div class="hamburger">
@@ -50,28 +52,28 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M6 22V4c0-.27 0-.55.07-.82a1.98 1.98 0 0 1 1.1-1.11C7.46 2 7.73 2 8 2h8c.27 0 .55 0 .82.07a1.98 1.98 0 0 1 1.11 1.1C18 3.46 18 3.73 18 4v18H6Z"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                            <img src="assets/building-icon.svg" alt="Edilizia civile e industriale" class="service-icon-img">
                         </div>
                         <h3>Edilizia civile e industriale</h3>
                         <p>Costruzioni e ristrutturazioni di edifici residenziali e commerciali.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                            <img src="assets/excavator-icon.svg" alt="Movimento terra" class="service-icon-img">
                         </div>
                         <h3>Movimento terra</h3>
                         <p>Scavi, livellamenti e preparazione del terreno per progetti di costruzione.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-road"><path d="M8 5c0 5.35-1.35 9.65-4 13"/><path d="M16 5c0 5.35 1.35 9.65 4 13"/><path d="M8.5 13.5h7"/><path d="M5 5h14"/><path d="M5 19h14"/></svg>
+                            <img src="assets/road-icon.svg" alt="Lavori stradali" class="service-icon-img">
                         </div>
                         <h3>Lavori stradali</h3>
                         <p>Costruzione e manutenzione di strade, ponti e infrastrutture correlate.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-waves"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+                            <img src="assets/hydraulic-icon.svg" alt="Opere idrauliche" class="service-icon-img">
                         </div>
                         <h3>Opere idrauliche</h3>
                         <p>Realizzazione di sistemi di drenaggio, canalizzazioni e opere di difesa idraulica.</p>
@@ -83,12 +85,69 @@
         <section id="certificazioni" class="section">
             <div class="container">
                 <h2>Le Nostre Certificazioni</h2>
-                <p>Siamo certificati SOA con le seguenti classifiche:</p>
-                <ul>
-                    <li>OG1 III - Edifici civili e industriali</li>
-                    <li>OG8 II - Opere fluviali, di difesa, di sistemazione idraulica e di bonifica</li>
-                    <li>OG3 II - Strade, autostrade, ponti, viadotti, ferrovie, metropolitane</li>
-                </ul>
+                <p class="section-description">La nostra competenza è riconosciuta e certificata. Siamo orgogliosi di presentare le nostre certificazioni SOA e il nostro impegno per la qualità:</p>
+                <div class="certifications-grid">
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <img src="assets/og1-icon.svg" alt="OG1 Icon" class="cert-icon">
+                        </div>
+                        <h3>OG1 III</h3>
+                        <p>Edifici civili e industriali</p>
+                    </div>
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <img src="assets/og8-icon.svg" alt="OG8 Icon" class="cert-icon">
+                        </div>
+                        <h3>OG8 II</h3>
+                        <p>Opere fluviali, di difesa, di sistemazione idraulica e di bonifica</p>
+                    </div>
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <img src="assets/og3-icon.svg" alt="OG3 Icon" class="cert-icon">
+                        </div>
+                        <h3>OG3 II</h3>
+                        <p>Strade, autostrade, ponti, viadotti, ferrovie, metropolitane</p>
+                    </div>
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <img src="assets/iso9001-icon.svg" alt="ISO 9001 Icon" class="cert-icon">
+                        </div>
+                        <h3>ISO 9001</h3>
+                        <p>Sistema di Gestione per la Qualità</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lavori-eseguiti" class="section">
+            <div class="container">
+                <h2>Lavori Eseguiti</h2>
+                <div class="lavori-container">
+                    <ul class="lavori-list">
+                        <li class="lavoro-item active" data-lavoro="lavoro1">Ristrutturazione Palazzo Storico</li>
+                        <li class="lavoro-item" data-lavoro="lavoro2">Costruzione Ponte Moderno</li>
+                        <li class="lavoro-item" data-lavoro="lavoro3">Realizzazione Parco Urbano</li>
+                        <!-- Aggiungi altri lavori qui -->
+                    </ul>
+                    <div class="galleria-container">
+                        <div id="galleria-lavoro1" class="galleria active">
+                            <img src="assets/lavoro1-1.jpg" alt="Palazzo Storico 1">
+                            <img src="assets/lavoro1-2.jpg" alt="Palazzo Storico 2">
+                            <img src="assets/lavoro1-3.jpg" alt="Palazzo Storico 3">
+                        </div>
+                        <div id="galleria-lavoro2" class="galleria">
+                            <img src="assets/lavoro2-1.jpg" alt="Ponte Moderno 1">
+                            <img src="assets/lavoro2-2.jpg" alt="Ponte Moderno 2">
+                            <img src="assets/lavoro2-3.jpg" alt="Ponte Moderno 3">
+                        </div>
+                        <div id="galleria-lavoro3" class="galleria">
+                            <img src="assets/lavoro3-1.jpg" alt="Parco Urbano 1">
+                            <img src="assets/lavoro3-2.jpg" alt="Parco Urbano 2">
+                            <img src="assets/lavoro3-3.jpg" alt="Parco Urbano 3">
+                        </div>
+                        <!-- Aggiungi altre gallerie qui -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -111,7 +170,5 @@
             <p>&copy; 2024 COES S.R.L. Tutti i diritti riservati.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

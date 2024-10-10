@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-.service-icon svg {
+.service-icon-img {
     width: 30px;
     height: 30px;
 }
@@ -258,28 +258,110 @@ h1, h2, h3, h4, h5, h6 {
     color: #666;
 }
 
-/* Certificazioni */
-#certificazioni ul {
-    list-style-type: none;
-    padding-left: 1rem;
+/* Stili per la sezione Certificazioni */
+#certificazioni {
+    background-color: var(--section-bg-light);
+    padding: 5rem 0;
+}
+
+.section-description {
+    text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
 
-#certificazioni li {
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 1.5rem;
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
-#certificazioni li::before {
-    content: "✓";
-    color: var(--primary-color);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    position: absolute;
-    left: 0;
+.certification-card {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certification-icon {
+    background-color: var(--primary-color);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+}
+
+.cert-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.certification-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.certification-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Stili per la sezione Lavori Eseguiti */
+.lavori-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.lavori-list {
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+.lavoro-item {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lavoro-item:hover, .lavoro-item.active {
+    background-color: var(--primary-color);
+}
+
+.galleria-container {
+    flex: 2;
+}
+
+.galleria {
+    display: none;
+}
+
+.galleria.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.galleria img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 /* Form di contatto */
@@ -391,7 +473,16 @@ footer {
         align-self: center;
     }
 
-    .services-grid {
+    .services-grid,
+    .certifications-grid {
         grid-template-columns: 1fr;
+    }
+
+    .lavori-container {
+        flex-direction: column;
+    }
+
+    .galleria-container {
+        margin-top: 1rem;
     }
 }
