@@ -210,28 +210,52 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
 }
 
-/* Servizi */
-#servizi ul {
-    list-style-type: none;
-    padding-left: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+/* Stili per la sezione Servizi */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-#servizi li {
+.service-card {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1rem;
-    position: relative;
-    padding-left: 1.5rem;
 }
 
-#servizi li::before {
-    content: "•";
-    color: var(--primary-color);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    position: absolute;
-    left: 0;
+.service-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 /* Certificazioni */
@@ -365,5 +389,9 @@ footer {
 
     form .cta-button {
         align-self: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
