@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
     const contactForm = document.getElementById('contact-form');
+    const filterButtons = document.querySelectorAll('.filter-btn');
     const lavoriItems = document.querySelectorAll('.lavoro-item');
-    const gallerie = document.querySelectorAll('.galleria');
 
     // Funzione per il toggle del menu mobile
     function toggleMobileMenu() {
@@ -150,17 +150,35 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', validateForm);
     }
 
-    // Funzionalità per la sezione Lavori Eseguiti
-    lavoriItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Rimuovi la classe active da tutti gli elementi
-            lavoriItems.forEach(i => i.classList.remove('active'));
-            gallerie.forEach(g => g.classList.remove('active'));
+    // Filtraggio dei lavori
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Rimuovi la classe active da tutti i pulsanti
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Aggiungi la classe active al pulsante cliccato
+            button.classList.add('active');
 
-            // Aggiungi la classe active all'elemento cliccato e alla galleria corrispondente
-            item.classList.add('active');
-            const galleriaId = `galleria-${item.dataset.lavoro}`;
-            document.getElementById(galleriaId).classList.add('active');
+            const filterValue = button.getAttribute('data-filter');
+
+            lavoriItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
+    });
+
+    // Scorrimento automatico delle immagini per i lavori
+    lavoriItems.forEach(item => {
+        const images = item.querySelectorAll('.lavoro-images img');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            images[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.opacity = 1;
+        }, 3000); // Cambia immagine ogni 3 secondi
     });
 });
